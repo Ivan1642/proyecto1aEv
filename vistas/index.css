@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+}
+
+header, footer{
+    background-color: #003942;
+}
+
+footer{
+    height: 300px;
+    overflow: hidden;
+}
+
+header{
+    height: 80px;
+    width: 100vw;
+}
+
+#logoHeader{
+    height: 80px;
+    width: 100px;
+}
+
+#logoFooter{
+    height: 120px;
+    width: 140px;
+}
+
+#barraBusqueda{
+    height: 40px;
+    border-radius: 10px;
+    width: 500px;
+}
+
+#textoMiCuenta,#textoCarrito{
+    color: white;
+    margin-top: 1rem;
+}
+
+#imgMiCuenta{
+    height: 55px;
+    width: 55px;
+}
+
+#imgCarrito{
+    height: 45px;
+    width: 45px;
+}
+
+#barraOpciones{
+    height: 40px;
+    width: 100vw;
+}
+
+.opcion{
+    width: 10vw;
+}
+
+#anuncioDescuento{
+    height: 75px;
+    background-color: #003942;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-shadow: #ccc 1px 0 8px;
+    width: 100vw;
+}
+
+#barraOpciones > *{
+    margin-bottom: 0px;
+}
+
+.imgCar{
+    width: 100%;
+    height: 800px;
+    width: 100%;
+}
+
+#carouselId{
+    height: 800px;
+    width: 100vw;
+}
+
+#divBtn{
+    position: absolute;
+    left: 60%;
+    top: 55vh;
+    text-align: center;
+}
+
+#btnComprar{
+    height: 80px;
+    width: 150px;
+    background-color: #003942;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#h1Desc,#h2Cod{
+    color: white;
+}
+
+.row{
+    width: 100%;
+}
+
+#h1Newsletter{
+    position: relative;
+    left: 42.5%;
+}
+
+.pFooter{
+    color: white;
+}
+
+#enviarEmail{
+    background-color: #003942;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}

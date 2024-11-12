@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>My Fitness</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <div class="row d-flex justify-content-between">
+      <!-- Logo -->
+      <img src="../imagenes/logoMyFitness.png" id="logoHeader">
+      <!-- Barra de busqueda -->
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <input type="text" name="barraBusqueda" id="barraBusqueda" placeholder="Buscar...">
+      </div>
+      <div class="d-flex justify-content-end col-3">
+        <!-- Mi Cuenta -->
+        <div class="col-6 d-flex justify-content-center align-items-center">
+          <img src="../imagenes/iconoPersona.webp" id="imgMiCuenta">
+          <p class="d-none d-md-block" id="textoMiCuenta">Mi cuenta</p>
+        </div>
+        <!-- Carrito -->
+        <div class="col-6 d-flex justify-content-center align-items-center">
+          <img src="../imagenes/carrito.png" id="imgCarrito">
+          <p class="d-none d-md-block" id="textoCarrito">Carrito</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Menu options -->
+    <div class="row d-flex justify-content-center align-items-center" id="barraOpciones">
+      <p class="col-2 col-md-1 d-flex justify-content-center align-self-center">Proteína</p>
+      <p class="col-2 col-md-1 d-flex justify-content-center">Nutrición</p>
+      <p class="col-2 col-lg-1 d-flex justify-content-center">Barritas y Snacks</p>
+      <p class="col-2 col-md-1 d-flex justify-content-center">Vitaminas</p>
+      <p class="col-2 col-md-1 d-flex justify-content-center">Vegan</p>
+      <p class="col-2 col-md-1 d-flex justify-content-center">Accesorios</p>
+    </div>
+    <!-- Anuncio Descuento -->
+    <div class="row d-flex justify-content-center" id="anuncioDescuento">
+      <h1>-60% EN TODO</h1>
+    </div>
+    <!-- Carousel -->
+    <div class="row">
+      <div id="carouselId" class="col-12 carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li style="color: white;" data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+            <li style="color: white;" data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+            <li style="color: white;" data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="../imagenes/imagenPortada.jpg" class="imgCar" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img src="../imagenes/imgCar2.webp" class="imgCar" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img src="../imagenes/imgCar3.webp" class="imgCar" alt="Third slide">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- Button and Text Carousel -->
+    <div id="divBtn">
+      <Button id="btnComprar">COMPRAR</Button>
+      <h1 id="h1Desc">60% DESCUENTO</h1>
+      <h2 id="h2Cod">Código: Eivor11</h2>
+    </div>
+    <!-- Newsletter -->
+    <div id="row d-flex justify-content-evenly">
+      <h1 id="h1Newsletter">NEWSLETTER</h1>
+      <p class="col-2">Suscribete a nuestra Newsletter <br> para recibir un 10% de descuento</p>
+      <form>
+        <input class="col-3" type="text" placeholder="Email...">
+        <input class="col-1" type="submit" id="enviarEmail" value="Enviar">
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="row d-flex justify-content-between">
+      <!-- Logo -->
+      <img src="../imagenes/logoMyFitness.png" id="logoFooter">
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <button style="color: #003942;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Español
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Català</a>
+        </div>
+      </div>
+      <!-- Ayuda y Servicio al cliente -->
+      <div>
+        <p class="pFooter">Servicio al cliente</p>
+        <p class="pFooter">Centro de ayuda</p>
+        <p class="pFooter">Devoluciones</p>
+        <p class="pFooter">Envíos a España</p>
+      </div>
+      <div>
+        <p class="pFooter">Rastrear pedido</p>
+        <p class="pFooter">Contáctanos</p>
+        <p class="pFooter">Envíos internacionales</p>
+        <p class="pFooter">Cookie settings</p>
+      </div>
+      <!-- Redes sociales -->
+      <div>
+        <img src="../imagenes/instagram.webp">
+        <img src="../imagenes/twitter.webp">
+        <img src="../imagenes/yt.webp">
+      </div>
+    </div>
+  </footer>
+  <script></script>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  </script>
+</body>
+</html>
