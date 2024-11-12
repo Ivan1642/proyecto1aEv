@@ -21,3 +21,29 @@ body{
     color: white;
     border: none;
 }
+
+header{
+    height: 80px;
+    width: 100vw;
+}
+
+#logoHeader{
+    height: 80px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+#textoMiCuenta,#textoCarrito{
+    color: white;
+    margin-top: 1rem;
+}
+
+#imgMiCuenta{
+    height: 55px;
+    width: 55px;
+}
+
+#imgCarrito{
+    height: 45px;
+    width: 45px;
+}
