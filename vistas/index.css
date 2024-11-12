@@ -7,7 +7,7 @@ header, footer{
 }
 
 footer{
-    height: 300px;
+    height: 250px;
     overflow: hidden;
 }
 
@@ -24,6 +24,9 @@ header{
 #logoFooter{
     height: 120px;
     width: 140px;
+    position: relative;
+    top: 7vh;
+    left: 2.5vw;
 }
 
 #barraBusqueda{
@@ -120,4 +123,24 @@ header{
     color: white;
     border: none;
     border-radius: 10px;
+}
+
+#dropdown{
+    background-color: white;
+    color: #003942;
+}
+
+.redSocial{
+    height: 40px;
+    width: 40px;
+}
+
+.enlacesAyuda{
+    margin-top: 30px;
+}
+
+#dropdownMenuOptions{
+    color: white;
+    background-color: #003942;
+    width: 100%;
 }

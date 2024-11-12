@@ -34,13 +34,32 @@
   </header>
   <main>
     <!-- Menu options -->
-    <div class="row d-flex justify-content-center align-items-center" id="barraOpciones">
+    <div class="row d-none d-md-flex justify-content-center align-items-center" id="barraOpciones">
       <p class="col-2 col-md-1 d-flex justify-content-center align-self-center">Proteína</p>
       <p class="col-2 col-md-1 d-flex justify-content-center">Nutrición</p>
       <p class="col-2 col-lg-1 d-flex justify-content-center">Barritas y Snacks</p>
       <p class="col-2 col-md-1 d-flex justify-content-center">Vitaminas</p>
       <p class="col-2 col-md-1 d-flex justify-content-center">Vegan</p>
       <p class="col-2 col-md-1 d-flex justify-content-center">Accesorios</p>
+    </div>
+    <!-- Menu options Dropdown -->
+    <div class="dropdown d-block d-md-none col-12">
+      <br>
+      <br>
+      <br>
+      <br>
+      <button id="dropdownMenuOptions" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Inicio
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item active" href="#">Inicio</a></li>
+        <li><a class="dropdown-item" href="#">Proteína</a></li>
+        <li><a class="dropdown-item" href="#">Nutrición</a></li>
+        <li><a class="dropdown-item" href="#">Barritas y Snacks</a></li>
+        <li><a class="dropdown-item" href="#">Vitaminas</a></li>
+        <li><a class="dropdown-item" href="#">Vegan</a></li>
+        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+      </ul>
     </div>
     <!-- Anuncio Descuento -->
     <div class="row d-flex justify-content-center" id="anuncioDescuento">
@@ -82,12 +101,12 @@
       <h2 id="h2Cod">Código: Eivor11</h2>
     </div>
     <!-- Newsletter -->
-    <div id="row d-flex justify-content-evenly">
-      <h1 id="h1Newsletter">NEWSLETTER</h1>
+    <h1 id="h1Newsletter">NEWSLETTER</h1>
+    <div id="row d-flex justify-content-center">
       <p class="col-2">Suscribete a nuestra Newsletter <br> para recibir un 10% de descuento</p>
-      <form>
-        <input class="col-3" type="text" placeholder="Email...">
-        <input class="col-1" type="submit" id="enviarEmail" value="Enviar">
+      <form class="col-5">
+        <input class="col-6" type="text" placeholder="Email...">
+        <input class="col-3" type="submit" id="enviarEmail" value="Enviar">
       </form>
     </div>
   </main>
@@ -96,33 +115,45 @@
       <!-- Logo -->
       <img src="../imagenes/logoMyFitness.png" id="logoFooter">
       <!-- Dropdown -->
-      <div class="dropdown">
-        <button style="color: #003942;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="dropdown d-none d-md-block  col-md-2">
+        <br>
+        <br>
+        <br>
+        <br>
+        <button id="dropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Español
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">Català</a>
-        </div>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item active" href="#">Español</a></li>
+          <li><a class="dropdown-item" href="#">Català</a></li>
+          <li><a class="dropdown-item" href="#">English</a></li>
+        </ul>
       </div>
       <!-- Ayuda y Servicio al cliente -->
-      <div>
+      <div class="col-3 col-md-2 enlacesAyuda">
+        <br>
+        <br>
         <p class="pFooter">Servicio al cliente</p>
         <p class="pFooter">Centro de ayuda</p>
         <p class="pFooter">Devoluciones</p>
         <p class="pFooter">Envíos a España</p>
       </div>
-      <div>
+      <div class="col-3 col-md-2 enlacesAyuda">
+        <br>
+        <br>
         <p class="pFooter">Rastrear pedido</p>
         <p class="pFooter">Contáctanos</p>
         <p class="pFooter">Envíos internacionales</p>
         <p class="pFooter">Cookie settings</p>
       </div>
       <!-- Redes sociales -->
-      <div>
-        <img src="../imagenes/instagram.webp">
-        <img src="../imagenes/twitter.webp">
-        <img src="../imagenes/yt.webp">
+      <div class="col-1 d-lg-flex align-items-center">
+        <br>
+        <br>
+        <br>
+        <img class="redSocial" src="../imagenes/instagram.webp">
+        <img class="redSocial" src="../imagenes/twitter.webp">
+        <img class="redSocial" src="../imagenes/yt.webp">
       </div>
     </div>
   </footer>
