@@ -68,6 +68,7 @@ header{
     text-align: center;
     text-shadow: #ccc 1px 0 8px;
     width: 100vw;
+    margin-left: 0px;
 }
 
 #barraOpciones > *{
@@ -83,6 +84,8 @@ header{
 #carouselId{
     height: 800px;
     width: 100vw;
+    margin-left: 7px;
+    padding: 0px;
 }
 
 #divBtn{
@@ -143,4 +146,33 @@ header{
     color: white;
     background-color: #003942;
     width: 100%;
+}
+
+#formNewsletter{
+    position: relative;
+    left: 50%;
+    top: -45px;
+}
+
+#textoNewsletter{
+    position: relative;
+    top: 10px;
+    left: 30%;
+}
+
+#h1NewsletterSm{
+    position: relative;
+    left: 27.5%;
+}
+
+#textoNewsletterSm{
+    position: relative;
+    top: 10px;
+    left: 10%;
+}
+
+#formNewsletterSm{
+    position: relative;
+    left: 50%;
+    top: -65px;
 }

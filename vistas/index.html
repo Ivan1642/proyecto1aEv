@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <title>My Fitness</title>
   <meta charset="utf-8">
@@ -106,19 +105,28 @@
         </button>
       </div>
     </div>
-    <!-- Button and Text Carousel -->
+    <!-- Carousel Button and Text -->
     <div id="divBtn">
       <Button id="btnComprar">COMPRAR</Button>
       <h1 id="h1Desc">60% DESCUENTO</h1>
       <h2 id="h2Cod">Código: Eivor11</h2>
     </div>
-    <!-- Newsletter -->
-    <h1 id="h1Newsletter">NEWSLETTER</h1>
-    <div id="row d-flex justify-content-center">
-      <p class="col-2">Suscribete a nuestra Newsletter <br> para recibir un 10% de descuento</p>
-      <form class="col-5">
+    <!-- Newsletter md -->
+    <h1 id="h1Newsletter" class="d-none d-md-block">NEWSLETTER</h1>
+    <div id="row">
+      <p class="d-none d-md-block col-md-2" id="textoNewsletter">Suscribete a nuestra Newsletter <br> para recibir un 10% de descuento</p>
+      <form class="d-none d-md-block col-5" id="formNewsletter">
         <input class="col-6" type="text" placeholder="Email...">
         <input class="col-3" type="submit" id="enviarEmail" value="Enviar">
+      </form>
+    </div>
+    <!-- Newsletter sm -->
+    <h1 id="h1NewsletterSm" class="d-block d-md-none">NEWSLETTER</h1>
+    <div id="row">
+      <p class="d-block d-md-none col-4" id="textoNewsletterSm">Suscribete a nuestra Newsletter <br> para recibir un 10% de descuento</p>
+      <form class="d-block d-md-none col-6" id="formNewsletterSm">
+        <input class="col-6" type="text" placeholder="Email...">
+        <input class="col-4" type="submit" id="enviarEmail" value="Enviar">
       </form>
     </div>
   </main>
