@@ -1,0 +1,58 @@
+body{
+    margin: 0px;
+}
+
+header{
+    height: 80px;
+    width: 100vw;
+    background-color: #003942;
+}
+
+#logoHeader{
+    height: 80px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+#textoMiCuenta,#textoCarrito{
+    color: white;
+    margin-top: 1rem;
+}
+
+#imgMiCuenta{
+    height: 55px;
+    width: 55px;
+}
+
+#imgCarrito{
+    height: 45px;
+    width: 45px;
+}
+
+#barraBusqueda{
+    height: 40px;
+    border-radius: 10px;
+    width: 500px;
+}
+
+#enlaceCarrito,#enlaceMiCuenta{
+    text-decoration: none;
+}
+
+.pFooter{
+    color: white;
+}
+
+#dropdown{
+    background-color: white;
+    color: #003942;
+}
+
+.redSocial{
+    height: 40px;
+    width: 40px;
+}
+
+.enlacesAyuda{
+    margin-top: 30px;
+}
