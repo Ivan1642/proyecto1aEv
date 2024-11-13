@@ -13,7 +13,7 @@ body{
 #divPosition{
     position: relative;
     left: 25%;
-    top: 10%;
+    top: 5%;
 }
 
 #submit{
@@ -55,5 +55,23 @@ header{
 #iconoForm{
     height: 125px;
     width: 125px;
-    margin-top: 40px;
+    margin-top: 25px;
+}
+
+#googleIcon{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+    border: 3px solid #003942;
+    border-radius: 40%;
+}
+
+#divGoogleRegistro{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#DivBtnInicioSesion{
+    margin-right: 50%;
+    text-align: center;
 }
