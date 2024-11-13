@@ -176,3 +176,11 @@ header{
     left: 50%;
     top: -65px;
 }
+
+#enlaceMiCuenta{
+    text-decoration: none;
+}
+
+#enlaceCarrito{
+    text-decoration: none;
+}
