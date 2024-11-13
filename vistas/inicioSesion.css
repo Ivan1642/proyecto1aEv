@@ -13,7 +13,7 @@ body{
 #divPosition{
     position: relative;
     left: 25%;
-    top: 25%;
+    top: 10%;
 }
 
 #submit{
@@ -46,4 +46,14 @@ header{
 #imgCarrito{
     height: 45px;
     width: 45px;
+}
+
+#divImg{
+    text-align: center;
+}
+
+#iconoForm{
+    height: 125px;
+    width: 125px;
+    margin-top: 40px;
 }
