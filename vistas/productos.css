@@ -8,10 +8,29 @@ header{
     background-color: #003942;
 }
 
+footer{
+    height: 250px;
+    overflow: hidden;
+    background-color: #003942;
+}
+
 #logoHeader{
+    width: 100%;
+    height: 100%;
+}
+
+#divLogoHeader{
     height: 80px;
     width: 100px;
     margin-left: 15px;
+}
+
+#logoFooter{
+    height: 120px;
+    width: 140px;
+    position: relative;
+    top: 7vh;
+    left: 2.5vw;
 }
 
 #textoMiCuenta,#textoCarrito{
@@ -55,4 +74,14 @@ header{
 
 .enlacesAyuda{
     margin-top: 30px;
+}
+
+.card-link{
+    background-color: #003942;
+    color: white;
+    border-radius: 5px;
+}
+
+.card{
+    margin: 40px;
 }
