@@ -142,6 +142,11 @@ header{
     margin-top: 30px;
 }
 
+.enlaceBarraNav{
+    text-decoration: none;
+    color: black;
+}
+
 #dropdownMenuOptions{
     color: white;
     background-color: #003942;
@@ -158,6 +163,10 @@ header{
     position: relative;
     top: 10px;
     left: 30%;
+}
+
+#introduccionEmail{
+    border-radius: 8px;
 }
 
 #h1NewsletterSm{
