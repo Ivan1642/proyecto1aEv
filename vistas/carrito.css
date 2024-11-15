@@ -10,11 +10,16 @@ header{
 
 #logoHeader{
     height: 80px;
+    width: 100%;
+}
+
+#divLogo{
+    height: 80px;
     width: 100px;
     margin-left: 15px;
 }
 
-#textoMiCuenta,#textoCarrito{
+#textoMiCuenta{
     color: white;
     margin-top: 1rem;
 }
@@ -22,6 +27,10 @@ header{
 #imgMiCuenta{
     height: 55px;
     width: 55px;
+}
+
+.enlaceMiCuenta{
+    text-decoration: none;
 }
 
 #divArtCar{
