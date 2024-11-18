@@ -55,8 +55,9 @@ footer{
     width: 500px;
 }
 
-#enlaceCarrito,#enlaceMiCuenta{
+a{
     text-decoration: none;
+    color: white;
 }
 
 .pFooter{
