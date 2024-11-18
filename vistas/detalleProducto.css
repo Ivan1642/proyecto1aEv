@@ -72,27 +72,33 @@ header{
     margin-top: 30px;
 }
 
-#divDetallesProd{
-    width: 100%;
-    color: white;
-    height: 650px;
+#imgMenos{
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
 }
 
-#imgMenos,#imgMas{
-    width: 25px;
-    height: 25px;
+#imgMas{
+    width: 20px;
+    height: 20px;
 }
 
 #divDetallesProd{
-    width: 80%;
     height: 600px;
     background-color: #003942;
+    color: white;
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 10px;
-    margin-left: 10%;
+}
+
+#enlaceCarrito{
+    text-decoration: none;
+    color: white;
 }
 
 #imgProd{
-    height: 600px;
+    height: 400px;
+    margin-top: 5%;
+    margin-left: 5%;
 }
