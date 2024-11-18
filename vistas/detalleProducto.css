@@ -77,3 +77,22 @@ header{
     color: white;
     height: 650px;
 }
+
+#imgMenos,#imgMas{
+    width: 25px;
+    height: 25px;
+}
+
+#divDetallesProd{
+    width: 80%;
+    height: 600px;
+    background-color: #003942;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    margin-left: 10%;
+}
+
+#imgProd{
+    height: 600px;
+}
