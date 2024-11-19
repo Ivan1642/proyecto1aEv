@@ -8,8 +8,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $contrasena = $_POST['contrasena'];
     $DNI = trim($_POST['dni']);
 
-    $resultado = registrarUsuario($nombre,$apellidos,$correo,$contrasena,$DNI);
+    registrarUsuario($nombre,$apellidos,$correo,$contrasena,$DNI);
 
-    echo $resultado;
+    header('../controladores/productos.php');
 }
 ?>

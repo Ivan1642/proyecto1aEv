@@ -11,7 +11,7 @@ function registrarUsuario($nombre,$apellidos,$correo,$contrasena,$dni){
          $consulta->execute([':correo' => $correo, ':dni' => $correo]);
 
          if($consulta->rowCount() > 0){
-            return "El correo o el dni ya están registrados";
+            return false;
          }
 
          $stmt = $conexion->prepare("insert into usuario(nombre,apellidos,correo,contrasena,dni) values (:nombre,:apellidos,:correo,:contrasena,:dni");
@@ -22,7 +22,31 @@ function registrarUsuario($nombre,$apellidos,$correo,$contrasena,$dni){
                          ':contrasena' => password_hash($contrasena,PASSWORD_BCRYPT),
                          ':dni' => $dni]);
 
-         return "Registro realizado";
+         return true;
+    }catch(PDOException $e){
+        $e->getMessage();
+    }
+}
+
+function iniciarSesionUsuario($correo,$contrasena){
+    global $conexion;
+
+    try{
+        $consulta = $conexion->prepare("select contrasena from usuario where correo = :correo");
+
+        $consulta->execute([':correo' => $correo]);
+
+        if($consulta->rowCount() === 0){
+            return false;
+        }
+
+        $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        if(password_verify($contrasena,$usuario['contrasena'])){
+            return true;
+        }else{
+            return false;
+        }
     }catch(PDOException $e){
         $e->getMessage();
     }
