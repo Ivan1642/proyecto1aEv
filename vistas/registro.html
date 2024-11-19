@@ -33,7 +33,7 @@
   </header>
   <main>
     <!-- Form Registro -->
-    <form class="col-12 d-flex justify-content-center">
+    <form method="post" class="col-12 d-flex justify-content-center">
       <div id="divForm" class="col-10 col-md-6 col-lg-4">
         <!-- Imagen Form -->
         <div id="divImg">
@@ -42,19 +42,23 @@
         <div id="divPosition">
           <div class="mb-3 col-6">
             <label for="exampleInputNombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp" placeholder="Introduce tu nombre...">
+            <input type="text" name="nombre" class="form-control" id="Nombre" aria-describedby="emailHelp" placeholder="Introduce tu nombre...">
           </div>
           <div class="mb-3 col-6">
             <label for="exampleInputApellidos" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="apellidos" aria-describedby="emailHelp" placeholder="Introduce tus apellidos...">
+            <input type="text" name="apellidos" class="form-control" id="apellidos" aria-describedby="emailHelp" placeholder="Introduce tus apellidos...">
           </div>
           <div class="mb-3 col-6">
               <label for="exampleInputEmail1" class="form-label">Dirección de Correo</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introduce tu correo...">
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introduce tu correo...">
           </div>
           <div class="mb-3 col-6">
               <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" placeholder="Introduce la contraseña...">
+              <input type="password" name="contrasena" class="form-control" id="password" placeholder="Introduce la contraseña...">
+          </div>
+          <div class="mb-3 col-6">
+            <label class="form-label">DNI</label>
+            <input type="text" name="dni" class="form-control" id="dni" placeholder="Introduce el dni...">
           </div>
           <div id="DivBtnRegistro">
             <button type="submit" class="btn btn-primary" id="submit">Registrar</button>
