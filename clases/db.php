@@ -2,7 +2,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $contrasena = "";
-    $base_datos = "";
+    $base_datos = "MyFitness";
 
     try{
         $conexion = new PDO("mysql:host=$servidor;dbname=$base_datos;charset=utf8", $usuario, $contrasena);
