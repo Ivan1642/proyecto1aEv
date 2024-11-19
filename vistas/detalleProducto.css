@@ -35,6 +35,11 @@ header{
     left: 2.5vw;
 }
 
+#dropdown{
+    background-color: white;
+    color: #003942;
+}
+
 #barraBusqueda{
     height: 40px;
     border-radius: 10px;

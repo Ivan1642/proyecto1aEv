@@ -40,3 +40,18 @@ header{
     margin-left: 20%;
     margin-top: 80px;
 }
+
+.filaCarrito{
+    width: 100%;
+    height: 250px;
+    align-items: center;
+}
+
+.imgProd{
+    height: 250px;
+    border-radius: 10px;
+}
+
+.imgTrash{
+    height: 60px;
+}
