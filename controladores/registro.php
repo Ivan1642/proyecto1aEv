@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $dniCliente = trim($_POST['dni']);
 
     if(registrarUsuario($nombre,$apellidos,$email,$contrasena,$dniCliente)){
-        header('Location: ../vistas/productos.html');
+        header('Location: ../vistas/inicioSesion.html');
         exit();
     }else{
         echo "Error: el usuario ya existe o hubo un problema en el registro";

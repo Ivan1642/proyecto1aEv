@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(iniciarSesionUsuario($email,$contrasena)){
         session_start();
         $_SESSION['email'] = $email;
-        header('Location: ../vistas/productos.html');
+        header('Location: ../vistas/productos.php');
         exit();
     }else{
         echo "Error: credenciales incorrectas";

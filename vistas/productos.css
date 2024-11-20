@@ -86,4 +86,9 @@ a{
 
 .card{
     margin: 40px;
+    width: 18rem
+}
+
+.listItem{
+    color: #003942;
 }
