@@ -1,40 +1,41 @@
 <?php
 require '../clases/db.php';
 
-function registrarUsuario($nombre,$apellidos,$correo,$contrasena,$dni){
+function registrarUsuario($nombre,$apellidos,$email,$contrasena,$dniCliente){
     global $conexion;
 
     try{
-        $consulta = $conexion->prepare("select correo from usuario where
-         correo = :correo or dni = :dni");
+        $consulta = $conexion->prepare("select email from usuario where
+         email = :email or dniCliente = :dniCliente");
 
-         $consulta->execute([':correo' => $correo, ':dni' => $correo]);
+         $consulta->execute([':email' => $email, ':dniCliente' => $dniCliente]);
 
          if($consulta->rowCount() > 0){
             return false;
          }
 
-         $stmt = $conexion->prepare("insert into usuario(nombre,apellidos,correo,contrasena,dni) values (:nombre,:apellidos,:correo,:contrasena,:dni");
+         $stmt = $conexion->prepare("insert into usuario(nombre,apellidos,email,contrasena,dniCliente) values (:nombre,:apellidos,:email,:contrasena,:dniCliente)");
 
          $stmt->execute([':nombre' => $nombre,
                          ':apellidos' => $apellidos,
-                         ':correo' => $correo,
+                         ':email' => $email,
                          ':contrasena' => password_hash($contrasena,PASSWORD_BCRYPT),
-                         ':dni' => $dni]);
+                         ':dniCliente' => $dniCliente]);
 
          return true;
     }catch(PDOException $e){
-        $e->getMessage();
+        error_log($e->getMessage());
+        return false;
     }
 }
 
-function iniciarSesionUsuario($correo,$contrasena){
+function iniciarSesionUsuario($email,$contrasena){
     global $conexion;
 
     try{
-        $consulta = $conexion->prepare("select contrasena from usuario where correo = :correo");
+        $consulta = $conexion->prepare("select contrasena from usuario where email = :email");
 
-        $consulta->execute([':correo' => $correo]);
+        $consulta->execute([':email' => $email]);
 
         if($consulta->rowCount() === 0){
             return false;

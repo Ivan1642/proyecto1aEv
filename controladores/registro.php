@@ -4,12 +4,17 @@ require '../servicios/clienteService.php';
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $nombre = trim($_POST['nombre']);
     $apellidos = trim($_POST['apellidos']);
-    $correo = trim($_POST['email']);
+    $email = trim($_POST['email']);
     $contrasena = $_POST['contrasena'];
-    $DNI = trim($_POST['dni']);
+    $dniCliente = trim($_POST['dni']);
 
-    registrarUsuario($nombre,$apellidos,$correo,$contrasena,$DNI);
-
-    header('../controladores/productos.php');
+    if(registrarUsuario($nombre,$apellidos,$email,$contrasena,$dniCliente)){
+        session_start();
+        $_SESSION['email'] = $email;
+        header('Location: ../vistas/productos.html');
+        exit();
+    }else{
+        echo "Error: el usuario ya existe o hubo un problema en el registro";
+    }
 }
 ?>

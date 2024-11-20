@@ -33,7 +33,7 @@
   </header>
   <main>
     <!-- Form Registro -->
-    <form method="post" class="col-12 d-flex justify-content-center">
+    <form action="../controladores/registro.php" method="post" class="col-12 d-flex justify-content-center">
       <div id="divForm" class="col-10 col-md-6 col-lg-4">
         <!-- Imagen Form -->
         <div id="divImg">
@@ -61,7 +61,7 @@
             <input type="text" name="dni" class="form-control" id="dni" placeholder="Introduce el dni..." required>
           </div>
           <div id="DivBtnRegistro">
-            <button type="submit" class="btn btn-primary" id="submit">Registrar</button>
+            <input type="submit" class="btn btn-primary" id="submit" value="Registrar">
           </div>
         </div>
       </div>
