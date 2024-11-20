@@ -48,7 +48,7 @@ function iniciarSesionUsuario($correo,$contrasena){
             return false;
         }
     }catch(PDOException $e){
-        $e->getMessage();
+        return"ERROR: " . $e->getMessage();
     }
 }
 ?>
