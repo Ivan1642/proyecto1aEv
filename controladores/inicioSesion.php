@@ -6,10 +6,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $contrasena = $_POST['contrasena'];
 
     if(iniciarSesionUsuario($email,$contrasena)){
+        session_start();
+        $_SESSION['email'] = $email;
         header('Location: ../vistas/productos.html');
         exit();
     }else{
-        echo "No se ha podido iniciar sesión";
+        echo "Error: credenciales incorrectas";
     }
 }
 ?>

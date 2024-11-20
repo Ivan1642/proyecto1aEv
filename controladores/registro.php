@@ -9,8 +9,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $dniCliente = trim($_POST['dni']);
 
     if(registrarUsuario($nombre,$apellidos,$email,$contrasena,$dniCliente)){
-        session_start();
-        $_SESSION['email'] = $email;
         header('Location: ../vistas/productos.html');
         exit();
     }else{
