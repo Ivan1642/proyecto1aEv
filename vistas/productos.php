@@ -30,7 +30,7 @@
     <div class="row d-flex justify-content-between">
         <!-- Logo -->
         <div id="divLogoHeader">
-          <a href="index.html"><img src="../imagenes/logoMyFitness.png" id="logoHeader"></a>
+          <a href="index.php"><img src="../imagenes/logoMyFitness.png" id="logoHeader"></a>
         </div>
         <!-- Barra de busqueda -->
         <div class="col-4 d-flex justify-content-center align-items-center">
@@ -44,8 +44,8 @@
           </div>
           <!-- Carrito -->
           <div class="col-6 d-flex justify-content-center align-items-center">
-            <a href="carrito.html"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
-            <a href="carrito.html"></a><p class="d-none d-md-block" id="textoCarrito">Carrito</p></a>
+            <a href="carrito.php"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
+            <a href="carrito.php"></a><p class="d-none d-md-block" id="textoCarrito">Carrito</p></a>
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@
     const buttonDetails = document.createElement('button');
     buttonDetails.classList.add('card-link');
     const linkDetails = document.createElement('a');
-    linkDetails.href = 'detalleProducto.html';
+    linkDetails.href = 'detalleProducto.php';
     linkDetails.textContent = 'Detalles';
     buttonDetails.appendChild(linkDetails);
 

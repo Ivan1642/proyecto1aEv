@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="index.css">
   </head>
 <body>
+  <?php
+    session_start();
+  ?>
+  <script>
+    const email = <?php echo json_encode($_SESSION['email'] ?? null); ?>;
+
+    document.addEventListener("DOMContentLoaded", () =>{
+      if(email){
+        const textoMiCuenta = document.querySelector("#textoMiCuenta");
+        if(textoMiCuenta){
+          textoMiCuenta.textContent = "Sesión Iniciada";
+        }
+      }
+    })
+  </script>
   <header>
     <div class="row d-flex justify-content-between">
       <!-- Logo -->
@@ -27,8 +42,8 @@
         </div>
         <!-- Carrito -->
         <div class="col-6 d-flex justify-content-center align-items-center">
-          <a href="carrito.html" id="enlaceCarrito"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
-          <a href="carrito.html" id="enlaceCarrito"><p class="d-none d-md-block" id="textoCarrito">Carrito</p></a>
+          <a href="carrito.php" id="enlaceCarrito"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
+          <a href="carrito.php" id="enlaceCarrito"><p class="d-none d-md-block" id="textoCarrito">Carrito</p></a>
         </div>
       </div>
     </div>

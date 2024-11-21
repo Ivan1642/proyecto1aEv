@@ -15,13 +15,27 @@
             crossorigin="anonymous"/>
             <link rel="stylesheet" href="carrito.css">
     </head>
-
     <body>
+    <?php
+        session_start();
+    ?>
+    <script>
+        const email = <?php echo json_encode($_SESSION['email'] ?? null); ?>;
+
+        document.addEventListener("DOMContentLoaded", () =>{
+        if(email){
+            const textoMiCuenta = document.querySelector("#textoMiCuenta");
+            if(textoMiCuenta){
+            textoMiCuenta.textContent = "Sesión Iniciada";
+            }
+        }
+        })
+    </script>
         <header>
             <div class="row d-flex justify-content-between">
                 <!-- Logo -->
                 <div id="divLogo">
-                    <a href="index.html"><img src="../imagenes/logoMyFitness.png" id="logoHeader"></a>
+                    <a href="index.php"><img src="../imagenes/logoMyFitness.png" id="logoHeader"></a>
                 </div>
                 <div class="d-flex justify-content-end col-3">
                   <!-- Mi Cuenta -->

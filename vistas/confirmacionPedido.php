@@ -1,61 +1,53 @@
 <!doctype html>
 <html lang="sp">
 <head>
-  <title>Detalles</title>
+  <title>Confirmar Compra</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="detalleProducto.css">
+    <link rel="stylesheet" href="confirmacionPedido.css">
 </head>
 <body>
+<?php
+    session_start();
+  ?>
+  <script>
+    const email = <?php echo json_encode($_SESSION['email'] ?? null); ?>;
+
+    document.addEventListener("DOMContentLoaded", () =>{
+      if(email){
+        const textoMiCuenta = document.querySelector("#textoMiCuenta");
+        if(textoMiCuenta){
+          textoMiCuenta.textContent = "Sesión Iniciada";
+        }
+      }
+    })
+  </script>
   <header>
     <div class="row d-flex justify-content-between">
-      <!-- Logo -->
-      <div id="divLogoHeader">
-        <a href="index.html"><img src="../imagenes/logoMyFitness.png" id="logoHeader"></a>
-      </div>
-      <!-- Barra de busqueda -->
-      <div class="col-4 d-flex justify-content-center align-items-center">
-        <input type="text" name="barraBusqueda" id="barraBusqueda" placeholder="Buscar...">
-      </div>
-      <div class="d-flex justify-content-end col-3">
-        <!-- Mi Cuenta -->
-        <div class="col-6 d-flex justify-content-center align-items-center">
-          <a href="inicioSesion.html" id="enlaceMiCuenta"><img src="../imagenes/iconoPersona.webp" id="imgMiCuenta"></a>
-          <a href="inicioSesion.html" id="enlaceMiCuenta"><p class="d-none d-md-block" id="textoMiCuenta">Mi cuenta</p></a>
+        <!-- Logo -->
+        <div id="divLogo">
+          <a href="index.php"><img src="../imagenes/logoMyFitness.png" id="logoHeader"></a>
         </div>
-        <!-- Carrito -->
-        <div class="col-6 d-flex justify-content-center align-items-center">
-          <a href="carrito.html" id="enlaceCarrito"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
-          <a href="carrito.html" id="enlaceCarrito"></a><p class="d-none d-md-block" id="textoCarrito">Carrito</p></a>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div class="row">
-      <div class="col-1" id="divMargin"></div>
-      <div id="divDetallesProd" class="col-10">
-        <div class="row">
-          <img src="../imagenes/creatina.avif" class="col-4" id="imgProd">
-          <div class="col-5 col-lg-6 ms-4 mt-5" id="divInfoProd">
-            <h1 id="nombreProd">Creatina</h1>
-            <p id="descripcionProd">La creatina monohidrato es una de las formas de creatina más investigadas del mundo, y se ha probado científicamente que nuestro producto en polvo de impactante calidad aumenta el rendimiento físico al mejorar la potencia general</p>
-            <p id="precioProd">19,90€</p>
-            <p id="pesoProd">500g</p>
-            <div id="divNumArt" class="col-1 d-flex justify-content-between">
-              <img src="../imagenes/iconoMenos.png" id="imgMenos">
-              <p id="numArt">1</p>
-              <img src="../imagenes/simboloMas.png" id="imgMas">
-            </div>
-            <input type="submit" value="Añadir al Carrito">
+        <div class="d-flex justify-content-end col-3">
+            <!-- Mi Cuenta -->
+          <a href="inicioSesion.html"><div class="col-6 d-flex justify-content-center align-items-center">
+            <img src="../imagenes/iconoPersona.webp" id="imgMiCuenta">
+            <p class="d-none d-md-block" id="textoMiCuenta">Mi cuenta</p>
+          </div></a>
+          <!-- Carrito -->
+          <div class="col-6 d-flex justify-content-center align-items-center">
+            <a href="carrito.php" class="enlaceCarrito"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
+            <a href="carrito.php" class="enlaceCarrito"></a><p class="d-none d-md-block" id="textoCarrito">Carrito</p></a>
           </div>
         </div>
       </div>
-    </div>
+  </header>
+  <main>
+
   </main>
   <footer>
     <div class="row d-flex justify-content-between">
@@ -98,6 +90,7 @@
           <img class="redSocial" src="../imagenes/twitter.webp">
           <img class="redSocial" src="../imagenes/yt.webp">
         </div>
+      </div>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
