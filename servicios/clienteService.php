@@ -1,5 +1,5 @@
 <?php
-require '../clases/db.php';
+require '../config/db.php';
 
 function registrarUsuario($nombre,$apellidos,$email,$contrasena,$dniCliente){
     global $conexion;

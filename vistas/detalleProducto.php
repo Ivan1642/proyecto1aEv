@@ -65,16 +65,26 @@
       <div class="col-1" id="divMargin"></div>
       <div id="divDetallesProd" class="col-10">
         <div class="row">
-          <img src="../imagenes/creatina.avif" class="col-4" id="imgProd">
+          <img src="" class="col-4" id="imgProd">
           <div class="col-5 col-lg-6 ms-4 mt-5" id="divInfoProd">
-            <h1 id="nombreProd">Creatina</h1>
-            <p id="descripcionProd">La creatina monohidrato es una de las formas de creatina más investigadas del mundo, y se ha probado científicamente que nuestro producto en polvo de impactante calidad aumenta el rendimiento físico al mejorar la potencia general</p>
-            <p id="precioProd">19,90€</p>
-            <p id="pesoProd">500g</p>
+            <h1 id="nombreProd"></h1>
+            <p id="descripcionProd"></p>
+            <p id="precioProd"></p>
+            <p id="pesoProd"></p>
             <div id="divNumArt" class="col-1 d-flex justify-content-between">
-              <img src="../imagenes/iconoMenos.png" id="imgMenos">
-              <p id="numArt">1</p>
-              <img src="../imagenes/simboloMas.png" id="imgMas">
+              <select id="multi" name="multi" multiple size="1">
+                <optgroup label="Cantidad">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                </optgroup>
+              </select>
             </div>
             <input type="submit" value="Añadir al Carrito">
           </div>
@@ -130,6 +140,29 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const idProducto = params.get('id');
+
+      if(idProducto){
+        fetch('../controladores/detalleProductoController.php?id=' + idProducto)
+          .then(response => response.json())
+          .then(producto =>{
+            if(producto.error){
+              console.error(producto.error);
+            }else{
+              document.getElementById('nombreProd').textContent = producto.nombre;
+              document.getElementById('descripcionProd').textContent = producto.descripcion;
+              document.getElementById('precioProd').textContent = `${producto.precio}`;
+              document.getElementById('pesoProd').textContent = `${producto.peso}g`;
+              document.getElementById('imgProd').src = `data:image/png;base64,${producto.foto}`;
+            }
+          })
+          .catch(error => console.error('Error al obtener el producto:',error));
+      }
+    });
   </script>
 </body>
 </html>
