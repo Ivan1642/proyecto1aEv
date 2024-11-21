@@ -118,13 +118,14 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      fetch('productosController.php')
+      fetch('../controladores/productosController.php')
         .then(response => response.json())
         .then(productos => {
           const divProductos = document.getElementById('divProductos');
           divProductos.innerHTML = '';
 
-          productos.foEeach(producto => {
+          productos.forEach(producto => {
+
             //card
             const card = document.createElement('div');
             card.classList.add('card');
@@ -133,7 +134,7 @@
             //imagen de la card
             const img = document.createElement('img');
             img.classList.add('card-img-top');
-            img.src = 'data:image/png;base64,${producto.foto}';
+            img.src = `data:image/png;base64,${producto.foto}`;
             img.alt = producto.nombre;
 
             //cuerpo de la card
@@ -147,44 +148,37 @@
 
             //peso
             const peso = document.createElement('p');
-            peso.textContent = 'Peso: ${producto.peso}g';
+            peso.textContent = `Peso: ${producto.peso}g`;
 
             //precio
             const precio = document.createElement('p');
-            precio.textContent = 'Precio: ${producto.precio.toFixed(2)}€';
+            precio.textContent = `Precio: ${producto.precio}€`;
 
-            //lista
-            const listGroup = document.createElement('ul');
-            listGroup.classList.add('list-group', 'list-group-flush');
-
-            //elementos de la lista
-            for(let i = 0;i < 3;i++){
-              const listItem = document.createElement('li');
-              listItem.classList.add('list-group-item');
-              listGroup.appendChild(listItem);
-            }
+            //descripcion
+            const descripcion = document.createElement('p');
+            descripcion.textContent = `${producto.descripcion}`;
+            console.log(`${producto.descripcion}`);
 
             //segundo cuerpo de la card
             const cardBodyButtons = document.createElement('div');
             cardBodyButtons.classList.add('card-body');
 
-            //boton detalles
-            const buttonDetails = document.createElement('button');
-            buttonDetails.classList.add('card-link');
+            //Boton detalles
             const linkDetails = document.createElement('a');
-            linkDetails.href = 'detalleProducto.php';
+            linkDetails.href = `detalleProducto.php?id=${producto.idProducto}`;
             linkDetails.textContent = 'Detalles';
-            buttonDetails.appendChild(linkDetails);
+            linkDetails.classList.add('btn','btn-primary');
 
-            //boton añadir al carrito
+            //Boton añadir al carrito
             const buttonAddToCart = document.createElement('button');
-            buttonAddToCart.classList.add('card-link');
             buttonAddToCart.textContent = 'Añadir al carrito';
+            buttonAddToCart.classList.add('btn','btn-secondary');
 
             //insertar elementos en el sitio
             cardBody.appendChild(cardTitle);
             cardBody.appendChild(peso);
             cardBody.appendChild(precio);
+            cardBody.appendChild(descripcion);
             card.appendChild(img);
             card.appendChild(cardBody);
             cardBodyButtons.appendChild(linkDetails);
