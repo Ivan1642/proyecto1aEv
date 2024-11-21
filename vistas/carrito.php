@@ -28,6 +28,16 @@
             if(textoMiCuenta){
             textoMiCuenta.textContent = "Sesión Iniciada";
             }
+
+            const enlaceMiCuenta = document.querySelector("#enlaceMiCuenta");
+            if(enlaceMiCuenta){
+            enlaceMiCuenta.href = "../servicios/logout.php";
+            }
+
+            const enlaceMiCuenta2 = document.querySelector("#enlaceMiCuenta2");
+            if(enlaceMiCuenta2){
+            enlaceMiCuenta2.href = "../servicios/logout.php";
+            }
         }
         })
     </script>

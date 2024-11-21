@@ -23,6 +23,16 @@
         if(textoMiCuenta){
           textoMiCuenta.textContent = "Sesión Iniciada";
         }
+
+        const enlaceMiCuenta = document.querySelector("#enlaceMiCuenta");
+        if(enlaceMiCuenta){
+          enlaceMiCuenta.href = "../servicios/logout.php";
+        }
+
+        const enlaceMiCuenta2 = document.querySelector("#enlaceMiCuenta2");
+        if(enlaceMiCuenta2){
+          enlaceMiCuenta2.href = "../servicios/logout.php";
+        }
       }
     })
   </script>
@@ -34,10 +44,10 @@
         </div>
         <div class="d-flex justify-content-end col-3">
             <!-- Mi Cuenta -->
-          <a href="inicioSesion.html"><div class="col-6 d-flex justify-content-center align-items-center">
-            <img src="../imagenes/iconoPersona.webp" id="imgMiCuenta">
-            <p class="d-none d-md-block" id="textoMiCuenta">Mi cuenta</p>
-          </div></a>
+          <div class="col-6 d-flex justify-content-center align-items-center">
+            <a href="inicioSesion.html" id="enlaceMiCuenta"><img src="../imagenes/iconoPersona.webp" id="imgMiCuenta"></a>
+            <a href="inicioSesion.html" id="enlaceMiCuenta2"><p class="d-none d-md-block" id="textoMiCuenta">Mi cuenta</p></a>
+          </div>
           <!-- Carrito -->
           <div class="col-6 d-flex justify-content-center align-items-center">
             <a href="carrito.php" class="enlaceCarrito"><img src="../imagenes/carrito.png" id="imgCarrito"></a>
