@@ -59,10 +59,10 @@
         <main>
             <div id="divArtCar">
                 <div class="filaCarrito row justify-content-around">
-                    <img src="../imagenes/creatina.avif" class="imgProd col-3">
-                    <h1 class="col-3" style="color: #003942;">Creatina</h1>
-                    <p class="col-2" style="color: #003942;">Cantidad: 1</p>
-                    <p class="col-2">Precio: 19,90€</p>
+                    <img src="" class="imgProd col-3">
+                    <h1 class="col-3" style="color: #003942;"></h1>
+                    <p class="col-2" style="color: #003942;"></p>
+                    <p class="col-2"></p>
                     <img src="../imagenes/iconoTrash.png" class="imgTrash col-2 col-md-1">
                 </div>
             </div>

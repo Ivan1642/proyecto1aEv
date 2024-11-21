@@ -12,8 +12,8 @@
 </head>
 <body>
 <?php
-    session_start();
-  ?>
+  session_start();
+?>
   <script>
     const email = <?php echo json_encode($_SESSION['email'] ?? null); ?>;
 
