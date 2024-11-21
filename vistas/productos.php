@@ -117,60 +117,84 @@
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
   </script>
   <script>
-    //card
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.style.width = '18rem';
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('productosController.php')
+        .then(response => response.json())
+        .then(productos => {
+          const divProductos = document.getElementById('divProductos');
+          divProductos.innerHTML = '';
 
-    //imagen de la card
-    const img = document.createElement('img');
-    img.classList.add('card-img-top');
+          productos.foEeach(producto => {
+            //card
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.style.width = '18rem';
 
-    //cuerpo de la card
-    const cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
+            //imagen de la card
+            const img = document.createElement('img');
+            img.classList.add('card-img-top');
+            img.src = 'data:image/png;base64,${producto.foto}';
+            img.alt = producto.nombre;
 
-    //titulo de la card
-    const cardTitle = document.createElement('h5');
-    cardTitle.classList.add('card-title');
+            //cuerpo de la card
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
 
-    //lista
-    const listGroup = document.createElement('ul');
-    listGroup.classList.add('list-group', 'list-group-flush');
+            //titulo de la card
+            const cardTitle = document.createElement('h5');
+            cardTitle.classList.add('card-title');
+            cardTitle.textContent = producto.nombre;
 
-    //elementos de la lista
-    for(let i = 0;i < 3;i++){
-      const listItem = document.createElement('li');
-      listItem.classList.add('list-group-item');
-      listGroup.appendChild(listItem);
-    }
+            //peso
+            const peso = document.createElement('p');
+            peso.textContent = 'Peso: ${producto.peso}g';
 
-    //segundo cuerpo de la card
-    const cardBodyButtons = document.createElement('div');
-    cardBodyButtons.classList.add('card-body');
+            //precio
+            const precio = document.createElement('p');
+            precio.textContent = 'Precio: ${producto.precio.toFixed(2)}€';
 
-    //boton detalles
-    const buttonDetails = document.createElement('button');
-    buttonDetails.classList.add('card-link');
-    const linkDetails = document.createElement('a');
-    linkDetails.href = 'detalleProducto.php';
-    linkDetails.textContent = 'Detalles';
-    buttonDetails.appendChild(linkDetails);
+            //lista
+            const listGroup = document.createElement('ul');
+            listGroup.classList.add('list-group', 'list-group-flush');
 
-    //boton añadir al carrito
-    const buttonAddToCart = document.createElement('button');
-    buttonAddToCart.classList.add('card-link');
-    buttonAddToCart.textContent = 'Añadir al carrito';
+            //elementos de la lista
+            for(let i = 0;i < 3;i++){
+              const listItem = document.createElement('li');
+              listItem.classList.add('list-group-item');
+              listGroup.appendChild(listItem);
+            }
 
-    //insertar elementos en el sitio
-    cardBody.appendChild(cardTitle);
-    card.appendChild(img);
-    card.appendChild(cardBody);
-    card.appendChild(listGroup);
-    cardBodyButtons.appendChild(buttonDetails);
-    cardBodyButtons.appendChild(buttonAddToCart);
-    card.appendChild(cardBodyButtons);
-    document.getElementById('divProductos').appendChild(card);
+            //segundo cuerpo de la card
+            const cardBodyButtons = document.createElement('div');
+            cardBodyButtons.classList.add('card-body');
+
+            //boton detalles
+            const buttonDetails = document.createElement('button');
+            buttonDetails.classList.add('card-link');
+            const linkDetails = document.createElement('a');
+            linkDetails.href = 'detalleProducto.php';
+            linkDetails.textContent = 'Detalles';
+            buttonDetails.appendChild(linkDetails);
+
+            //boton añadir al carrito
+            const buttonAddToCart = document.createElement('button');
+            buttonAddToCart.classList.add('card-link');
+            buttonAddToCart.textContent = 'Añadir al carrito';
+
+            //insertar elementos en el sitio
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(peso);
+            cardBody.appendChild(precio);
+            card.appendChild(img);
+            card.appendChild(cardBody);
+            cardBodyButtons.appendChild(linkDetails);
+            cardBodyButtons.appendChild(buttonAddToCart);
+            card.appendChild(cardBodyButtons);
+            divProductos.appendChild(card);
+          });
+        })
+        .catch(error => console.error('Error: ' , error));
+    });
   </script>
 </body>
 </html>

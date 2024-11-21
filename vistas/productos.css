@@ -37,6 +37,7 @@ footer{
 #textoMiCuenta,#textoCarrito{
     color: white;
     margin-top: 1rem;
+    text-decoration: none;
 }
 
 #imgMiCuenta{
