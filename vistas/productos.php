@@ -11,8 +11,20 @@
     <link rel="stylesheet" href="productos.css">
 </head>
 <body>
+  <?php
+    session_start();
+  ?>
   <script>
-    const email = <?php echo json_encode($_SESSION['email']); ?>;
+    const email = <?php echo json_encode($_SESSION['email'] ?? null); ?>;
+
+    document.addEventListener("DOMContentLoaded", () =>{
+      if(email){
+        const textoMiCuenta = document.querySelector("#textoMiCuenta");
+        if(textoMiCuenta){
+          textoMiCuenta.textContent = "Sesión Iniciada";
+        }
+      }
+    })
   </script>
   <header>
     <div class="row d-flex justify-content-between">
