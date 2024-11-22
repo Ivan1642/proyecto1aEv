@@ -33,8 +33,38 @@
         if(enlaceMiCuenta2){
           enlaceMiCuenta2.href = "../servicios/logout.php";
         }
-      }
-    })
+      }    
+
+      const botonAnadirCarrito = document.querySelector('input[type="submit"]');
+      botonAnadirCarrito.addEventListener('click',(e) => {
+        e.preventDefault();
+
+        const idCarrito = sessionStorage.getItem('carrito_id');
+        const idProducto = new URLSearchParams(window.location.search).get('id');
+        const cantidad = document.querySelector('#multi').value;
+
+        if(idCarrito && idProducto && cantidad){
+          fetch('../controladores/lineaCarritoController.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/son',
+            },
+            body: JSON.stringify({idCarrito, idProducto, cantidad})
+          })
+          .then(response => response.json())
+          .then(data => {
+            if(data.success){
+              alert('Producto añadido al carrito');
+            }else{
+              alert('Error al añadir al carrito');
+            }
+          })
+          .catch(error => {
+            console.error('Error al añadir al carrito');
+          });
+        }
+      });
+    });
   </script>
   <header>
     <div class="row d-flex justify-content-between">
@@ -72,17 +102,17 @@
             <p id="precioProd"></p>
             <p id="pesoProd"></p>
             <div id="divNumArt" class="col-1 d-flex justify-content-between">
-              <select id="multi" name="multi" multiple size="1">
+              <select id="multi" name="multi">
                 <optgroup label="Cantidad">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
                 </optgroup>
               </select>
             </div>

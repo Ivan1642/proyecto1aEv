@@ -32,6 +32,16 @@
           enlaceMiCuenta2.href = "../servicios/logout.php";
         }
       }
+
+      fetch('../controladores/carritoController.php')
+                .then(response => response.json())
+                .then(data => {
+                    const carritoId = data.carrito_id;
+                    sessionStorage.setItem('carrito_id',carritoId);
+                })
+                .catch(error => {
+                    console.error('Error al obtener el carrito');
+                });
     })
   </script>
   <header>

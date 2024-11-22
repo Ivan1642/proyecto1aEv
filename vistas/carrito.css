@@ -55,3 +55,10 @@ header{
 .imgTrash{
     height: 60px;
 }
+
+#comprar{
+    background-color: white;
+    color: #003942;
+    height: 40px;
+    width: 60px;
+}

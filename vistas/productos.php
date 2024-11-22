@@ -33,8 +33,8 @@
         if(enlaceMiCuenta2){
           enlaceMiCuenta2.href = "../servicios/logout.php";
         }
-      }
-    })
+      }    
+    });
   </script>
   <header>
     <div class="row d-flex justify-content-between">
@@ -157,7 +157,6 @@
             //descripcion
             const descripcion = document.createElement('p');
             descripcion.textContent = `${producto.descripcion}`;
-            console.log(`${producto.descripcion}`);
 
             //segundo cuerpo de la card
             const cardBodyButtons = document.createElement('div');
@@ -173,6 +172,7 @@
             const buttonAddToCart = document.createElement('button');
             buttonAddToCart.textContent = 'Añadir al carrito';
             buttonAddToCart.classList.add('btn','btn-secondary');
+            buttonAddToCart.setAttribute('data-id',producto.idProducto);
 
             //insertar elementos en el sitio
             cardBody.appendChild(cardTitle);

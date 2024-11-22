@@ -8,5 +8,5 @@ if(!isset($_SESSION['carrito_id'])){
     insertarCarritoEnDB($idUnico);
 }
 
-echo json_encode(['carrito_id'] => $_SESSION['carrito_id']);
+echo json_encode(['carrito_id' => $_SESSION['carrito_id']]);
 ?>
